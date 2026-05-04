@@ -28,11 +28,9 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Only handle GET requests and skip manifest/sw themselves if needed, 
-  // but better to just handle them normally if not offline.
   if (event.request.method !== 'GET') return;
 
-  // Let browser handle manifest and scripts if possible to avoid mime-type issues in some proxies
+  // Let browser handle manifest and service worker directly to avoid issues
   if (event.request.url.includes('manifest.json') || event.request.url.includes('sw.js')) {
     return;
   }
@@ -40,8 +38,8 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     fetch(event.request)
       .catch(() => {
-        return caches.match(event.request).then((cachedResponse) => {
-          if (cachedResponse) return cachedResponse;
+        return caches.match(event.request).then((response) => {
+          if (response) return response;
           if (event.request.mode === 'navigate') {
             return caches.match('/');
           }

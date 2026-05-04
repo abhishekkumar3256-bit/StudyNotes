@@ -2,15 +2,15 @@
   "short_name": "StudyNotes",
   "name": "StudyNotes Pro",
   "description": "A comprehensive student notes sharing platform with secure admin controls and real-time request handling.",
-  "id": "studynotes-pro-v1",
+  "id": "studynotes-pro-app-v1",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "orientation": "portrait",
-  "display_override": ["standalone", "minimal-ui"],
-  "categories": ["education", "productivity"],
+  "display_override": ["standalone", "minimal-ui", "window-controls-overlay"],
+  "categories": ["education", "productivity", "utilities"],
   "icons": [
     {
       "src": "https://img.icons8.com/color/192/book.png",
