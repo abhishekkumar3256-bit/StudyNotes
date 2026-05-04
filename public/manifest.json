@@ -1,0 +1,50 @@
+{
+  "short_name": "StudyNotes",
+  "name": "StudyNotes Pro",
+  "description": "A comprehensive student notes sharing platform with secure admin controls and real-time request handling.",
+  "id": "studynotes-pro-v1",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "orientation": "portrait",
+  "display_override": ["standalone", "minimal-ui"],
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "https://img.icons8.com/color/192/book.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://img.icons8.com/color/192/book.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://img.icons8.com/color/512/book.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&q=80&w=1000",
+      "sizes": "1000x600",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Home Screen Desktop"
+    },
+    {
+      "src": "https://images.unsplash.com/photo-1434031213662-874b0639e1,b2?auto=format&fit=crop&q=80&w=500",
+      "sizes": "500x800",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Home Screen Mobile"
+    }
+  ]
+}

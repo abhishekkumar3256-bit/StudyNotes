@@ -1,0 +1,64 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "System user profile",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["student", "admin"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "name", "email", "role", "createdAt"]
+    },
+    "Note": {
+      "title": "Note",
+      "description": "Educational study note",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "link": { "type": "string", "format": "uri" },
+        "class": { "type": "string" },
+        "subject": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "remark": { "type": "string" },
+        "authorId": { "type": "string" },
+        "status": { "type": "string", "enum": ["approved", "pending"] }
+      },
+      "required": ["title", "link", "class", "subject", "date", "status"]
+    },
+    "Request": {
+      "title": "Note Request",
+      "description": "User submitted request for a new note",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "link": { "type": "string", "format": "uri" },
+        "class": { "type": "string" },
+        "subject": { "type": "string" },
+        "remark": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "link", "class", "subject", "userId", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User registry"
+    },
+    "notes/{noteId}": {
+      "schema": "Note",
+      "description": "Global approved notes"
+    },
+    "requests/{requestId}": {
+      "schema": "Request",
+      "description": "Pending and historical note submission requests"
+    }
+  }
+}
